@@ -2941,8 +2941,8 @@
         <artifactId>mvn-scalafmt_${scala.binary.version}</artifactId>
         <version>1.0.3</version>
         <configuration>
-          <parameters>${scalafmt.parameters}</parameters> <!-- (Optional) Additional command line arguments -->
-          <skip>${scalafmt.skip}</skip> <!-- (Optional) skip formatting -->
+<!--          <parameters>${scalafmt.parameters}</parameters> &lt;!&ndash; (Optional) Additional command line arguments &ndash;&gt;-->
+<!--          <skip>${scalafmt.skip}</skip> &lt;!&ndash; (Optional) skip formatting &ndash;&gt;-->
           <skipSources>${scalafmt.skip}</skipSources>
           <skipTestSources>${scalafmt.skip}</skipTestSources>
           <configLocation>dev/.scalafmt.conf</configLocation> <!-- (Optional) config location -->
@@ -3126,7 +3126,7 @@
         </pluginManagement>
       </build>
     </profile>
-    
+
     <profile>
       <id>scala-2.13</id>
       <properties>
