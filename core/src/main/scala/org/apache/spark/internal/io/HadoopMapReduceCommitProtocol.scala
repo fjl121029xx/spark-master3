@@ -142,20 +142,7 @@ class HadoopMapReduceCommitProtocol(
     // Note that %05d does not truncate the split number, so if we have more than 100000 tasks,
     // the file name is fine and won't overflow.
     val split = taskContext.getTaskAttemptID.getTaskID.getId
-    val ld = java.time.LocalDate.now()
-    val y = ld.getYear.toString
-    val m = ld.getMonth.toString
-    var sm : String = m
-    if ( m.length < 2 ) {
-      sm = ("0" + m)
-    }
-    val d = ld.getDayOfMonth.toString
-    var sd : String = d
-    if ( d.length < 2 ) {
-      sd = ("0" + d)
-    }
-
-    f"$y$sm$sd-part-$split%05d-$jobId$ext"
+    f"part-$split%05d-$jobId$ext"
   }
 
   override def setupJob(jobContext: JobContext): Unit = {

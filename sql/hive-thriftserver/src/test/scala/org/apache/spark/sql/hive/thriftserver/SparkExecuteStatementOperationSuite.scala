@@ -42,4 +42,5 @@ class SparkExecuteStatementOperationSuite extends SparkFunSuite {
     assert(columns.get(1).getType().getName == "INT")
     assert(columns.get(1).getComment() == "")
   }
+
 }
