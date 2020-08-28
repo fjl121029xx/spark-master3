@@ -126,11 +126,12 @@ object HiveThriftServer2 extends Logging {
     val STARTED, COMPILED, CANCELED, FAILED, FINISHED, CLOSED = Value
     type ExecutionState = Value
   }
+
 }
 
 private[hive] class HiveThriftServer2(sqlContext: SQLContext)
   extends HiveServer2
-  with ReflectedCompositeService {
+    with ReflectedCompositeService {
   // state is tracked internally so that the server only attempts to shut down if it successfully
   // started, and then once only.
   private val started = new AtomicBoolean(false)
@@ -164,7 +165,7 @@ private[hive] class HiveThriftServer2(sqlContext: SQLContext)
 
   override def stop(): Unit = {
     if (started.getAndSet(false)) {
-       super.stop()
+      super.stop()
     }
   }
 }

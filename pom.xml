@@ -240,7 +240,8 @@
     <orc.deps.scope>compile</orc.deps.scope>
     <parquet.deps.scope>compile</parquet.deps.scope>
     <parquet.test.deps.scope>test</parquet.test.deps.scope>
-
+    <session.executionRootDirectory>executionRootDirectory</session.executionRootDirectory>
+    <test_classpath>test_classpath</test_classpath>
     <!--
       Overridable test home. So that you can call individual pom files directly without
       things breaking.
